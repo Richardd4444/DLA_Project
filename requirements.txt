@@ -5,3 +5,8 @@ matplotlib
 scikit-learn
 scipy
 openpyxl
+keras
+tensorflow
+keras.models
+keras.utils
+keras.preprocessing.sequence

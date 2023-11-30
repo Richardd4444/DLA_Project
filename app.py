@@ -1,14 +1,15 @@
-import streamlit as st
-import pandas as pd
 import pickle
+
 import matplotlib.pyplot as plt
+import pandas as pd
+import streamlit as st
 
 
 @st.cache_resource
 def load_model():
-    with open('path file', 'rb') as model_file:
-        model = pickle.load(model_file)
-    return model
+    with open('models/modelLSTM.pkl', 'rb') as model_file:
+        model_pkl = pickle.load(model_file)
+    return model_pkl
 
 
 st.set_page_config(page_title="Proyecto final DLA", page_icon=":robot_face:")
@@ -39,10 +40,13 @@ pred_btn, clear_btn = st.columns(2)
 pred_clicked = pred_btn.button("Predecir")
 
 prediction = None
+
 if pred_clicked:
+    model = load_model()
     prediction = model.predict()
 
 
+'''
 def plot_series(series, y=None, y_pred=None, y_pred_std=None, x_label="$t$", y_label="$x$"):
     r, c = 3, 5
     fig, axes = plt.subplots(nrows=r, ncols=c, sharey=True, sharex=True, figsize=(20, 10))
@@ -66,9 +70,9 @@ def plot_series(series, y=None, y_pred=None, y_pred_std=None, x_label="$t$", y_l
             if y_label and col == 0:
                 plt.ylabel(y_label, fontsize=16, rotation=0)
     return plt
+'''
 
 
 if file:
     df = pd.read_excel(file)
     print(df['Dias'].values.shape)
-    st.pyplot(plot_series(df['Dias'].values))
