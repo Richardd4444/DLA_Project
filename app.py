@@ -75,4 +75,4 @@ def plot_series(series, y=None, y_pred=None, y_pred_std=None, x_label="$t$", y_l
 
 if file:
     df = pd.read_excel(file)
-    print(df['Dias'].values.shape)
+    print(df['Date'].values.shape)
