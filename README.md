@@ -14,5 +14,5 @@ activación de tipo `ReLu` y por último el modelo se compila con un optimizador
 [![lstm.png](https://i.postimg.cc/FzjCwqbr/lstm.png)](https://postimg.cc/xN1Pz6Fh)
 
 <p align="center">
-  <img width="460" height="300" src="[https://picsum.photos/460/300](https://postimg.cc/xN1Pz6Fh)">
+  <img width="460" height="300" src="https://i.postimg.cc/FzjCwqbr/lstm.png">
 </p>
