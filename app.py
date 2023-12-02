@@ -46,9 +46,8 @@ pred_btn, clear_btn = st.columns(2)
 pred_clicked = pred_btn.button("Predecir")
 
 prediction = None
-
+model = load_model()
 if pred_clicked:
-    model = load_model()
     prediction = model.predict()
 
 if file:
